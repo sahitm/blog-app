@@ -1,10 +1,14 @@
 import React from "react";
 import "./App.css";
+import AddPostForm from "./features/posts/AddPostForm";
+import PostsList from "./features/posts/PostsList";
+
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline text-center">Hello world!</h1>
+      <AddPostForm />
+      <PostsList />
     </div>
   );
 }
