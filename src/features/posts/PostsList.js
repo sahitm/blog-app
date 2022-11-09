@@ -5,12 +5,18 @@ import { selectAllPosts } from "./postsSlice";
 function PostsList() {
   const posts = useSelector(selectAllPosts);
 
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
   const renderedPosts = posts.map((post) => (
     <article key={post.id}>
       <div>
         <img
           className="w-full"
-          src={`https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(${post.id}).png`}
+          src={`https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(${getRandomInt(1,5)}).png`}
           alt={`post-${post.id}`}
         />
         <div className="py-2 px-4 w-full flex justify-between bg-indigo-700">
